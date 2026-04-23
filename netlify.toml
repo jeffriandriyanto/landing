@@ -1,15 +1,12 @@
 [build]
-  command = "pnpm run build && ls -la .output"
+  command = "pnpm run build"
   publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "24"
-  PNPM_FLAGS = "--shamefully-hoist"
+  PNPM_FLAGS = "--shamefully-hoist" 
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/server"
   status = 200
-
-[dev]
-  command = "pnpm run dev"
