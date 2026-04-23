@@ -1,14 +1,14 @@
 [build]
-  command = "pnpm run build"
+  command = "pnpm run generate"
   publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "24"
-  NPM_FLAGS = "--version" # Memaksa netlify mendeteksi pnpm jika pnpm-lock ada
+  PNPM_FLAGS = "--shamefully-hoist"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/index.html"
   status = 200
 
 [dev]
