@@ -49,12 +49,12 @@
       </div>
 
       <!-- Flat Grid Fallback / Legend -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-16">
+      <div class="flex flex-wrap justify-center gap-6 mt-16">
         <div
           v-for="cat in categories"
           :key="cat.name"
           ref="catRefs"
-          class="reveal p-5 rounded-xl glass border border-void-300 hover:border-accent/20 transition-all duration-300 group"
+          class="reveal p-5 rounded-xl glass border border-void-300 hover:border-accent/20 transition-all duration-300 group w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.33%-1.5rem)] max-w-[380px]"
         >
           <div class="flex items-center gap-2 mb-3">
             <div

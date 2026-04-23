@@ -121,7 +121,7 @@ const philRef = ref<HTMLElement | null>(null);
 const timeline = [
   {
     year: "2019–Present",
-    title: "Senior Web Developer & Technical Manager",
+    title: "Senior Web Developer & Technical Web Manager",
     company: "PT DUIT Investech",
     desc: "Leading the architectural design and frontend execution of enterprise-scale systems, including PT Antam's Brankas e-commerce and KTA Polri. Managed mission-critical platforms for the Indonesian Military Academies (AAU & AAL), SISTesi school management, and GLZoo ticketing. Remained hands-on in implementing secure encryption for sensitive resident data (NIK/KK), PWA features via Service Workers, and complex performance reporting for KONI DKI Jakarta.",
     tags: ["Vue.js", "Laravel", "Security Architecture", "PWA"],

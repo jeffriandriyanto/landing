@@ -647,7 +647,8 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {},
+  "apiSecret": ""
 };
 const envOptions = {
   prefix: "NITRO_",
