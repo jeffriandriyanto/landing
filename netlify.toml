@@ -1,5 +1,5 @@
-[build]
-  command = "pnpm run generate"
+[[build]
+  command = "pnpm run build && ls -la .output"
   publish = ".output/public"
 
 [build.environment]
