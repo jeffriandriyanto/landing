@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "pnpm run build"
   publish = ".output/public"
 
 [build.environment]
@@ -12,4 +12,4 @@
   status = 200
 
 [dev]
-  command = "npm run dev"
+  command = "pnpm run dev"
