@@ -122,7 +122,7 @@ const projects: Project[] = [
     description:
       "Built the end-to-end physical gold ordering platform for PT ANTAM Tbk, one of Indonesia's largest state-owned mining companies. Implemented refresh token rotation with secure HTTP-only cookies, real-time gold price feeds, and a multi-step order pipeline with payment gateway integration.",
     tags: ["Nuxt.js", "REST API", "OAuth 2.0", "JWT", "Payment Gateway", "SSR"],
-    role: "Lead Frontend Engineer",
+    role: "Frontend Engineer",
     year: "2023",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     highlights: [
@@ -140,7 +140,7 @@ const projects: Project[] = [
     description:
       "Architected a comprehensive School Management Information System handling LMS, E-testing with proctoring, student/teacher profiling, and academic reporting across 50+ educational institutions. Managed complex data relationships and role-based access for admins, teachers, students, and parents.",
     tags: ["Vue.js", "Nuxt.js", "Laravel", "MySQL", "REST API", "RBAC"],
-    role: "Technical Lead",
+    role: "Lead Frontend Engineer",
     year: "2021–2023",
     gradient: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%)",
     highlights: [
@@ -208,14 +208,12 @@ const projects: Project[] = [
     description:
       "Created a modern community management dashboard for RW 11 Bukit Wahid residential complex. Features include financial reporting with automated calculations, resident data management, announcement systems, and digital infrastructure tools that replaced manual paper-based processes.",
     tags: ["Nuxt.js", "Firebase", "Chart.js", "PWA", "Dashboard", "Reporting"],
-    role: "Full-Stack Developer",
-    year: "2024",
+    role: "Frontend Engineer",
+    year: "2026",
     gradient: "linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2a2a2a 100%)",
     highlights: [
       "Real-time financial reporting dashboard",
-      "Firebase-powered resident database",
-      "PWA with offline-first architecture",
-      "Automated monthly financial calculations",
+      "Automated monthly financial calculations"
     ],
   },
 ];
