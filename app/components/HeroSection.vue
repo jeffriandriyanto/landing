@@ -184,7 +184,7 @@ function initCanvas() {
   const animate = () => {
     ctx.clearRect(0, 0, w, h);
     for (let i = 0; i < points.length; i++) {
-      const p = points[i];
+      const p: any = points[i];
       const dx = mouse.x - p.x,
         dy = mouse.y - p.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
@@ -208,7 +208,7 @@ function initCanvas() {
       ctx.fill();
 
       for (let j = i + 1; j < points.length; j++) {
-        const q = points[j];
+        const q: any = points[j];
         const distSq = Math.pow(p.x - q.x, 2) + Math.pow(p.y - q.y, 2);
         if (distSq < 150 * 150) {
           ctx.beginPath();
