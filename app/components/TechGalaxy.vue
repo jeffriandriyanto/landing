@@ -122,6 +122,15 @@ const categories = [
     ],
   },
   {
+    name: "Design & Creative",
+    color: "#9b5de5", // Warna ungu untuk kategori desain
+    techs: [
+      { name: "Figma", level: 5 },
+      { name: "Adobe Illustrator", level: 4 },
+      { name: "Adobe Photoshop", level: 4 },
+    ],
+  },
+  {
     name: "Mobile",
     color: "#00b4d8",
     techs: [
@@ -149,17 +158,20 @@ const categories = [
   },
 ];
 
-// Build flat tech list for galaxy
 const allTechs: Tech[] = [];
+let totalTechs = 0;
+categories.forEach((cat) => (totalTechs += cat.techs.length));
+
 let ai = 0;
 categories.forEach((cat) => {
-  cat.techs.forEach((t, ti) => {
+  cat.techs.forEach((t) => {
     allTechs.push({
       name: t.name,
       category: cat.name,
       level: t.level,
-      angle: (ai / 15) * Math.PI * 2 + Math.random() * 0.3,
-      orbit: 0.25 + (t.level / 5) * 0.55 + Math.random() * 0.1,
+      // Menggunakan totalTechs agar jarak antar "planet" tetap proporsional
+      angle: (ai / totalTechs) * Math.PI * 2 + Math.random() * 0.2,
+      orbit: 0.25 + (t.level / 5) * 0.55 + Math.random() * 0.05,
       color: cat.color,
     });
     ai++;
