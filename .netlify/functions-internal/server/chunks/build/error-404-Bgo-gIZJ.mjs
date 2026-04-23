@@ -2,7 +2,7 @@ import { mergeProps, withCtx, createTextVNode, toDisplayString, defineComponent,
 import { v as parseQuery, m as hasProtocol, h as joinURL, x as withTrailingSlash, y as withoutTrailingSlash } from '../nitro/nitro.mjs';
 import { _ as _export_sfc, u as useRouter, e as encodeRoutePath, r as resolveRouteObject, n as navigateTo, a as useNuxtApp, b as useRuntimeConfig, c as nuxtLinkDefaults } from './server.mjs';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
-import { u as useHead } from './v4-BMoJS_AN.mjs';
+import { u as useHead } from './v4-Dc1twzv4.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -346,7 +346,7 @@ const _sfc_main = {
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "antialiased bg-white dark:bg-black dark:text-white font-sans grid min-h-screen overflow-hidden place-content-center text-black" }, _attrs))} data-v-a548e1ee><div class="fixed left-0 right-0 spotlight z-10" data-v-a548e1ee></div><div class="max-w-520px text-center z-20" data-v-a548e1ee><h1 class="font-medium mb-8 sm:text-10xl text-8xl" data-v-a548e1ee>${ssrInterpolate(__props.status)}</h1><p class="font-light leading-tight mb-16 px-8 sm:px-0 sm:text-4xl text-xl" data-v-a548e1ee>${ssrInterpolate(__props.description)}</p><div class="flex items-center justify-center w-full" data-v-a548e1ee>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "antialiased bg-white dark:bg-black dark:text-white font-sans grid min-h-screen overflow-hidden place-content-center text-black" }, _attrs))} data-v-16e28e9c><div class="fixed left-0 right-0 spotlight z-10" data-v-16e28e9c></div><div class="max-w-520px text-center z-20" data-v-16e28e9c><h1 class="font-medium mb-8 sm:text-10xl text-8xl" data-v-16e28e9c>${ssrInterpolate(__props.status)}</h1><p class="font-light leading-tight mb-16 px-8 sm:px-0 sm:text-4xl text-xl" data-v-16e28e9c>${ssrInterpolate(__props.description)}</p><div class="flex items-center justify-center w-full" data-v-16e28e9c>`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "cursor-pointer gradient-border px-4 py-2 sm:px-6 sm:py-3 sm:text-xl text-md"
@@ -369,10 +369,10 @@ const _sfc_main = {
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("../node_modules/nuxt/dist/app/components/error-404.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("../node_modules/.pnpm/nuxt@3.21.2_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@parcel+watcher@2.5.6_@vue+compi_688a247dcc1b561dd52ff5cd1b1ec8e8/node_modules/nuxt/dist/app/components/error-404.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a548e1ee"]]);
+const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-16e28e9c"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404-CXEyJJc1.mjs.map
+//# sourceMappingURL=error-404-Bgo-gIZJ.mjs.map

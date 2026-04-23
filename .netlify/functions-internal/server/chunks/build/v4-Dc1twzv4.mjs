@@ -20,4 +20,4 @@ function useHead(input, options = {}) {
 }
 
 export { useHead as u };
-//# sourceMappingURL=v4-BMoJS_AN.mjs.map
+//# sourceMappingURL=v4-Dc1twzv4.mjs.map
