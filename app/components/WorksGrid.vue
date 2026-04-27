@@ -115,6 +115,22 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    id: "rw11",
+    title: "RW 11 Bukit Wahid",
+    summary:
+      "Community dashboard with financial reporting, resident management, and digital infrastructure.",
+    description:
+      "Created a modern community management dashboard for RW 11 Bukit Wahid residential complex. Features include financial reporting with automated calculations, resident data management, announcement systems, and digital infrastructure tools that replaced manual paper-based processes.",
+    tags: ["Nuxt.js", "Firebase", "Chart.js", "PWA", "Dashboard", "Reporting"],
+    role: "Frontend Engineer",
+    year: "2026",
+    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+    highlights: [
+      "Real-time financial reporting dashboard",
+      "Automated monthly financial calculations",
+    ],
+  },
+  {
     id: "antam",
     title: "ANTAM Gold",
     summary:
@@ -124,7 +140,7 @@ const projects: Project[] = [
     tags: ["Nuxt.js", "REST API", "OAuth 2.0", "JWT", "Payment Gateway", "SSR"],
     role: "Frontend Engineer",
     year: "2023",
-    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+    gradient: "linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2a2a2a 100%)",
     highlights: [
       "Refresh token rotation with zero-downtime auth",
       "Real-time gold pricing with WebSocket feeds",
@@ -139,7 +155,7 @@ const projects: Project[] = [
       "Large-scale school management system: LMS, E-testing, data profiling for 50+ institutions.",
     description:
       "Architected a comprehensive School Management Information System handling LMS, E-testing with proctoring, student/teacher profiling, and academic reporting across 50+ educational institutions. Managed complex data relationships and role-based access for admins, teachers, students, and parents.",
-    tags: ["Vue.js", "Nuxt.js", "Laravel", "MySQL", "REST API", "RBAC"],
+    tags: ["Vue.js", "Nuxt.js", "Laravel", "MySQL", "REST API", "Vuetify"],
     role: "Lead Frontend Engineer",
     year: "2021–2023",
     gradient: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%)",
@@ -163,7 +179,7 @@ const projects: Project[] = [
       "Node.js",
       "WebSocket",
       "OMS",
-      "Geofencing",
+      "Angular Js",
     ],
     role: "Senior Frontend Developer",
     year: "2020–2022",
@@ -198,22 +214,6 @@ const projects: Project[] = [
       "Zero-install printing via native WebSocket",
       "CMS with hierarchical organizational data",
       "Government-grade security compliance",
-    ],
-  },
-  {
-    id: "rw11",
-    title: "RW 11 Bukit Wahid",
-    summary:
-      "Community dashboard with financial reporting, resident management, and digital infrastructure.",
-    description:
-      "Created a modern community management dashboard for RW 11 Bukit Wahid residential complex. Features include financial reporting with automated calculations, resident data management, announcement systems, and digital infrastructure tools that replaced manual paper-based processes.",
-    tags: ["Nuxt.js", "Firebase", "Chart.js", "PWA", "Dashboard", "Reporting"],
-    role: "Frontend Engineer",
-    year: "2026",
-    gradient: "linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2a2a2a 100%)",
-    highlights: [
-      "Real-time financial reporting dashboard",
-      "Automated monthly financial calculations"
     ],
   },
 ];

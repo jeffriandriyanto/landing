@@ -43,13 +43,7 @@
         <span
           class="block text-5xl sm:text-7xl lg:text-8xl font-bold leading-none tracking-tighter"
         >
-          <span class="text-gradient">Architect</span>
-          <span class="text-white"> &</span>
-        </span>
-        <span
-          class="block text-5xl sm:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tighter"
-        >
-          Technical Web Manager
+          <span class="text-gradient">Manager</span>
         </span>
       </h1>
 

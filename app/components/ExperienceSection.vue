@@ -124,14 +124,14 @@ const timeline = [
     title: "Senior Web Developer & Technical Web Manager",
     company: "PT DUIT Investech",
     desc: "Leading the architectural design and frontend execution of enterprise-scale systems, including PT Antam's Brankas e-commerce and KTA Polri. Managed mission-critical platforms for the Indonesian Military Academies (AAU & AAL), SISTesi school management, and GLZoo ticketing. Remained hands-on in implementing secure encryption for sensitive resident data (NIK/KK), PWA features via Service Workers, and complex performance reporting for KONI DKI Jakarta.",
-    tags: ["Vue.js", "Laravel", "Security Architecture", "PWA"],
+    tags: ["Vue.js", "Socket", "Laravel", "Security Architecture", "PWA"],
   },
   {
     year: "2020–Present",
-    title: "Senior Web Architect (Freelance)",
+    title: "Senior Web Architect",
     company: "CREETECH",
     desc: "Designing and scaling web-based solutions, including a comprehensive Residential Management System (RT/RW) and industrial IoT monitoring dashboards. high-traffic event platforms with real-time QR ticketing.",
-    tags: ["IoT Dashboards", "E-commerce", "Web Performance", "Architecture"],
+    tags: ["JavaScript", "PWA", "E-commerce", "Web Performance", "Architecture"],
   },
   {
     year: "2021–2023",
@@ -152,7 +152,7 @@ const timeline = [
     title: "Frontend Web Developer",
     company: "PT Nostra Solusi Teknologi",
     desc: "Built the foundational infrastructure for 'Cari Parkir' and 'Redkendi'. Implemented complex map-based logic using Google Maps API and real-time event handling with Firebase Push Notifications.",
-    tags: ["React.js", "Google Maps", "Firebase", "UI/UX"],
+    tags: ["Angular Js", "React.js", "Google Maps", "Firebase", "UI/UX"],
   },
 ];
 
