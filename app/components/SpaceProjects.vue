@@ -42,8 +42,9 @@
           <!-- Top Row -->
           <div class="flex items-center justify-between text-xs text-neutral-500 mb-4 pb-3 border-b border-white/10">
             <span class="font-bold text-white group-hover:underline">{{ project.file }}</span>
-            <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 border border-white/20 text-[10px]">{{ project.categoryLabel }}</span>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 border border-white/20 text-[10px] text-neutral-300">{{ project.company }}</span>
+              <span class="hidden sm:inline px-2 py-0.5 border border-white/20 text-[10px]">{{ project.categoryLabel }}</span>
               <span>{{ project.year }}</span>
             </div>
           </div>
@@ -246,17 +247,15 @@ const selectedCategory = ref<string>('all')
 const activeProject = ref<Project | null>(null)
 
 const categories = [
-  { id: 'all', label: 'All Volumes [6]' },
+  { id: 'all', label: 'All Volumes [9]' },
   { id: 'fullstack', label: 'Fullstack & Vibe [3]' },
-  { id: 'frontend', label: 'Frontend Architecture [3]' },
+  { id: 'frontend', label: 'Frontend & MFEs [4]' },
+  { id: 'iot-hardware', label: 'IoT & Hardware [2]' },
 ]
 
 const filteredProjects = computed(() => {
   if (selectedCategory.value === 'all') return projectsData
-  if (selectedCategory.value === 'fullstack') {
-    return projectsData.filter((p) => p.category === 'fullstack' || p.category === 'ai-vibe')
-  }
-  return projectsData.filter((p) => p.category === 'frontend')
+  return projectsData.filter((p) => p.category === selectedCategory.value)
 })
 
 const selectCategory = (id: string) => {

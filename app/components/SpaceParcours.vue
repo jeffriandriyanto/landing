@@ -88,8 +88,10 @@
           <h2 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-tight">
             {{ node.role }}
           </h2>
-          <div class="text-xs text-neutral-400 font-mono mt-1 mb-4">
-            @ {{ node.company }}
+          <div class="flex flex-wrap items-center gap-2 text-xs text-neutral-400 font-mono mt-1 mb-4">
+            <span class="text-white font-bold">@ {{ node.company }}</span>
+            <span v-if="node.location" class="text-neutral-500">· {{ node.location }}</span>
+            <span v-if="node.employmentType" class="text-neutral-500">({{ node.employmentType }})</span>
           </div>
 
           <!-- Narrative Description -->

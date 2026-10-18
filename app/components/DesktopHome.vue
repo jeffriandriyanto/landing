@@ -47,12 +47,12 @@
             Selected Works
           </h2>
           <p class="text-xs text-neutral-400 group-hover:text-neutral-800 transition-colors font-sans leading-relaxed">
-            Fullstack AI applications, SaaS platforms, and enterprise-grade design systems.
+            Enterprise micro-frontends, full-stack export OMS (Nuxt 4 + Laravel 12), IoT RFID platforms, and smart estate ecosystems.
           </p>
         </div>
 
         <div class="flex items-center justify-between text-xs font-mono pt-3 border-t border-white/10 group-hover:border-black/20">
-          <span class="text-neutral-500 group-hover:text-neutral-700">6 Projects Loaded</span>
+          <span class="text-neutral-500 group-hover:text-neutral-700">9 Projects Loaded</span>
           <span class="font-bold flex items-center gap-1">
             mount volume ▸
           </span>
@@ -79,12 +79,12 @@
             Career Git Graph
           </h2>
           <p class="text-xs text-neutral-400 group-hover:text-neutral-800 transition-colors font-sans leading-relaxed">
-            Visual commit timeline: evolution from junior frontend to technical manager and vibe-coding engineer.
+            Version-controlled career: Duit Investech (7+ yrs), creetech.id, poteq, Caption Hospitality, Nostra.
           </p>
         </div>
 
         <div class="flex items-center justify-between text-xs font-mono pt-3 border-t border-white/10 group-hover:border-black/20">
-          <span class="text-neutral-500 group-hover:text-neutral-700">5 Commits · 3 Branches</span>
+          <span class="text-neutral-500 group-hover:text-neutral-700">6 Commits · 3 Branches</span>
           <span class="font-bold flex items-center gap-1">
             inspect graph ▸
           </span>
