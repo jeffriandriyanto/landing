@@ -2,23 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-// ─── Design Tokens ───
+// ─── Retro Monochrome Design Tokens ───
 :root {
-  --void: #0a0a0a;
-  --void-50: #141414;
-  --void-100: #1a1a1a;
-  --void-200: #222222;
-  --void-300: #2a2a2a;
-  --void-400: #333333;
-  --silver: #c0c0c0;
-  --silver-dim: #666666;
-  --silver-muted: #888888;
-  --silver-bright: #e0e0e0;
-  --accent: #00dca0;
-  --accent-glow: #00ffbb;
-  --accent-dim: #00b882;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --os-black: #000000;
+  --os-void: #050505;
+  --os-dark: #0d0d0d;
+  --os-surface: #141414;
+  --os-panel: #1a1a1a;
+  --os-border: #2a2a2a;
+  --os-border-bright: #444444;
+  --os-dim: #666666;
+  --os-muted: #999999;
+  --os-light: #dcdcdc;
+  --os-white: #ffffff;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace;
 }
 
 // ─── Base Reset ───
@@ -31,179 +30,195 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  background: var(--os-black);
+  color: var(--os-light);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-sans);
-  background: var(--void);
-  color: var(--silver);
+  background: var(--os-black);
+  color: var(--os-light);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 ::selection {
-  background: rgba(0, 220, 160, 0.3);
-  color: #fff;
+  background: var(--os-white);
+  color: var(--os-black);
 }
 
-// ─── Scrollbar ───
+// ─── Retro Scrollbar ───
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--void);
+  background: var(--os-dark);
+  border-left: 1px solid var(--os-border);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--void-400);
-  border-radius: 3px;
+  background: var(--os-border-bright);
+  border-radius: 0;
+  border: 1px solid var(--os-black);
   &:hover {
-    background: var(--silver-dim);
+    background: var(--os-muted);
   }
 }
 
-// ─── Magnetic Hover Effect ───
-.magnetic-wrap {
+// ─── Retro OS Components & Helpers ───
+.retro-border {
+  border: 1px solid var(--os-border);
+}
+
+.retro-border-bright {
+  border: 1px solid var(--os-border-bright);
+}
+
+.retro-panel {
+  background: var(--os-surface);
+  border: 1px solid var(--os-border);
+}
+
+.retro-invert-hover {
+  transition: all 0.15s ease;
+  &:hover {
+    background: var(--os-white) !important;
+    color: var(--os-black) !important;
+  }
+}
+
+// Retro Grid Background
+.bg-retro-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-retro-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+// Blinking Cursor
+.retro-cursor {
   display: inline-block;
-  position: relative;
-  cursor: pointer;
+  width: 0.55em;
+  height: 1.1em;
+  background-color: var(--os-white);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: cursor-blink 1s step-start infinite;
 }
 
-// ─── Glassmorphism ───
-.glass {
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.glass-strong {
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
+// CRT Scanlines Overlay
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  overflow: hidden;
 
-// ─── Text Gradient ───
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-glow) 50%, var(--silver-bright) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// ─── Section Reveal ───
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  will-change: transform, opacity;
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  will-change: transform, opacity;
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(60px);
-  will-change: transform, opacity;
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  will-change: transform, opacity;
-}
-
-// ─── Floating Animation ───
-@keyframes antigravity-float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
+  // Scanline pattern
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.35) 50%
+    );
+    background-size: 100% 3px;
+    z-index: 2;
+    opacity: 0.65;
   }
-  25% {
-    transform: translateY(-12px) rotate(0.5deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(0deg);
-  }
-  75% {
-    transform: translateY(-8px) rotate(-0.5deg);
+
+  // Radial vignette / CRT curvature
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 3;
+    opacity: 0.8;
   }
 }
 
-.antigravity {
-  animation: antigravity-float 8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+// Subtle Tube Flicker
+.crt-flicker {
+  animation: crt-flicker-anim 0.12s infinite;
 }
 
-.antigravity-delay-1 {
-  animation-delay: -2s;
+@keyframes crt-flicker-anim {
+  0% { opacity: 0.99; }
+  50% { opacity: 1; }
+  100% { opacity: 0.985; }
 }
 
-.antigravity-delay-2 {
-  animation-delay: -4s;
-}
-
-.antigravity-delay-3 {
-  animation-delay: -6s;
-}
-
-// ─── Glow Effects ───
-.glow-accent {
-  box-shadow: 0 0 30px rgba(0, 220, 160, 0.15), 0 0 60px rgba(0, 220, 160, 0.05);
-}
-
-.glow-accent-hover {
-  transition: box-shadow 0.4s ease;
-  &:hover {
-    box-shadow: 0 0 40px rgba(0, 220, 160, 0.2), 0 0 80px rgba(0, 220, 160, 0.08);
-  }
-}
-
-// ─── Divider ───
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--void-400), transparent);
-  margin: 0 auto;
-}
-
-// ─── Stack Tag ───
+// Stack Tag Monokrom
 .stack-tag {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 2px 8px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--accent);
-  background: rgba(0, 220, 160, 0.08);
-  border: 1px solid rgba(0, 220, 160, 0.15);
-  border-radius: 4px;
+  color: var(--os-light);
+  background: var(--os-panel);
+  border: 1px solid var(--os-border);
   letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   white-space: nowrap;
+  
   &:hover {
-    background: rgba(0, 220, 160, 0.15);
-    border-color: rgba(0, 220, 160, 0.3);
+    border-color: var(--os-white);
+    color: var(--os-white);
   }
 }
 
-// ─── Page Transitions ───
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s cubic-bezier(0.37, 0, 0.63, 1);
-}
+// Retro Button
+.retro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--os-border-bright);
+  background: var(--os-surface);
+  color: var(--os-white);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
 
-.page-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
+  &:hover {
+    background: var(--os-white);
+    color: var(--os-black);
+    border-color: var(--os-white);
+  }
 
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.active {
+    background: var(--os-white);
+    color: var(--os-black);
+    border-color: var(--os-white);
+  }
 }

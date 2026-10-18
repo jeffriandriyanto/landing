@@ -1,10 +1,7 @@
 <template>
-  <div class="min-h-screen bg-void text-silver">
-    <NavBar />
-    <main>
-      <slot />
-    </main>
-    <FooterSection />
+  <div class="min-h-screen bg-black text-white font-mono selection:bg-white selection:text-black relative">
+    <RetroCrtFilter />
+    <slot />
   </div>
 </template>
 

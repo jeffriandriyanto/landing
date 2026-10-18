@@ -20,24 +20,24 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: "Jeffri Andriyanto — Senior Frontend Architect",
+      title: "Jeffri Andriyanto — Software Engineer & Product Builder",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
           content:
-            "8+ years of transforming complex logic into elegant, high-performance digital experiences. Portfolio of Jeffri Andriyanto — Frontend Architect & Technical Web Manager.",
+            "JEFFRI-OS. Software engineer with deep frontend roots, building fullstack apps and products with modern AI and vibe coding workflows. Interactive retro OS portfolio.",
         },
-        { name: "theme-color", content: "#0a0a0a" },
+        { name: "theme-color", content: "#000000" },
         {
           property: "og:title",
-          content: "Jeffri Andriyanto — Senior Frontend Architect",
+          content: "Jeffri Andriyanto — Software Engineer & Product Builder",
         },
         {
           property: "og:description",
           content:
-            "Interactive portfolio showcasing 8+ years of frontend engineering excellence.",
+            "JEFFRI-OS: Interactive retro desktop portfolio of Jeffri Andriyanto.",
         },
         { property: "og:type", content: "website" },
       ],
@@ -53,7 +53,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap",
         },
       ],
     },
