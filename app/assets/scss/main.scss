@@ -2,223 +2,197 @@
 @tailwind components;
 @tailwind utilities;
 
-// ─── Retro Monochrome Design Tokens ───
+// ─── GitHub Design System Tokens ───
 :root {
-  --os-black: #000000;
-  --os-void: #050505;
-  --os-dark: #0d0d0d;
-  --os-surface: #141414;
-  --os-panel: #1a1a1a;
-  --os-border: #2a2a2a;
-  --os-border-bright: #444444;
-  --os-dim: #666666;
-  --os-muted: #999999;
-  --os-light: #dcdcdc;
-  --os-white: #ffffff;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace;
+  --gh-canvas: #ffffff;
+  --gh-subtle: #f6f8fa;
+  --gh-panel: #ffffff;
+  --gh-border: #d0d7de;
+  --gh-border-muted: #eaeef2;
+  --gh-fg: #1f2328;
+  --gh-muted: #656d76;
+  --gh-blue: #0969da;
+  --gh-blue-subtle: #ddf4ff;
+  --gh-green: #1a7f37;
+  --gh-green-subtle: #dafbe1;
+  --gh-purple: #8250df;
+  --gh-orange: #bc4c00;
 }
 
-// ─── Base Reset ───
+html.dark {
+  --gh-canvas: #0d1117;
+  --gh-subtle: #161b22;
+  --gh-panel: #161b22;
+  --gh-border: #30363d;
+  --gh-border-muted: #21262d;
+  --gh-fg: #e6edf3;
+  --gh-muted: #8d96a0;
+  --gh-blue: #2f81f7;
+  --gh-blue-subtle: rgba(56, 139, 253, 0.15);
+  --gh-green: #3fb950;
+  --gh-green-subtle: rgba(46, 160, 67, 0.15);
+  --gh-purple: #bc8cff;
+  --gh-orange: #f0883e;
+}
+
+// ─── Base Reset & Defaults ───
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html {
-  background: var(--os-black);
-  color: var(--os-light);
-  font-family: var(--font-sans);
+  background-color: var(--gh-canvas);
+  color: var(--gh-fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--os-black);
-  color: var(--os-light);
-  overflow-x: hidden;
-  line-height: 1.5;
+  background-color: var(--gh-canvas);
+  color: var(--gh-fg);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 ::selection {
-  background: var(--os-white);
-  color: var(--os-black);
+  background-color: var(--gh-blue-subtle);
+  color: var(--gh-blue);
 }
 
-// ─── Retro Scrollbar ───
+// ─── GitHub Utility Components ───
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.3125rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-subtle);
+  color: var(--gh-fg);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.12s cubic-bezier(0.3, 0, 0.5, 1);
+  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+
+  &:hover {
+    background-color: rgba(234, 238, 242, 0.7);
+    border-color: var(--gh-border);
+  }
+
+  &:active {
+    background-color: rgba(220, 226, 232, 0.8);
+  }
+
+  &.primary {
+    background-color: var(--gh-green);
+    color: #ffffff;
+    border-color: rgba(27, 31, 36, 0.15);
+    box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+
+    &:hover {
+      background-color: #176f30;
+    }
+  }
+}
+
+.dark .gh-btn:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+}
+
+.gh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  border-radius: 9999px;
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-subtle);
+  color: var(--gh-muted);
+}
+
+.gh-topic-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  border-radius: 9999px;
+  background-color: var(--gh-blue-subtle);
+  color: var(--gh-blue);
+  transition: background-color 0.12s ease;
+
+  &:hover {
+    background-color: rgba(9, 105, 218, 0.15);
+  }
+}
+
+// ─── Markdown Content Typography in README ───
+.markdown-body {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gh-fg);
+
+  h1, h2, h3, h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--gh-fg);
+  }
+
+  h2 {
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--gh-border-muted);
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+  }
+
+  li {
+    margin-top: 0.25rem;
+  }
+
+  code {
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    background-color: var(--gh-subtle);
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+}
+
+// ─── Scrollbar ───
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--os-dark);
-  border-left: 1px solid var(--os-border);
+  background: var(--gh-subtle);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--os-border-bright);
-  border-radius: 0;
-  border: 1px solid var(--os-black);
-  &:hover {
-    background: var(--os-muted);
-  }
-}
-
-// ─── Retro OS Components & Helpers ───
-.retro-border {
-  border: 1px solid var(--os-border);
-}
-
-.retro-border-bright {
-  border: 1px solid var(--os-border-bright);
-}
-
-.retro-panel {
-  background: var(--os-surface);
-  border: 1px solid var(--os-border);
-}
-
-.retro-invert-hover {
-  transition: all 0.15s ease;
-  &:hover {
-    background: var(--os-white) !important;
-    color: var(--os-black) !important;
-  }
-}
-
-// Retro Grid Background
-.bg-retro-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-.bg-retro-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 16px 16px;
-}
-
-// Blinking Cursor
-.retro-cursor {
-  display: inline-block;
-  width: 0.55em;
-  height: 1.1em;
-  background-color: var(--os-white);
-  vertical-align: middle;
-  margin-left: 2px;
-  animation: cursor-blink 1s step-start infinite;
-}
-
-@keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-// CRT Scanlines Overlay
-.crt-overlay {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  overflow: hidden;
-
-  // Scanline pattern
-  &::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%, 
-      rgba(0, 0, 0, 0.35) 50%
-    );
-    background-size: 100% 3px;
-    z-index: 2;
-    opacity: 0.65;
-  }
-
-  // Radial vignette / CRT curvature
-  &::after {
-    content: " ";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      circle at center,
-      transparent 60%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-    z-index: 3;
-    opacity: 0.8;
-  }
-}
-
-// Subtle Tube Flicker
-.crt-flicker {
-  animation: crt-flicker-anim 0.12s infinite;
-}
-
-@keyframes crt-flicker-anim {
-  0% { opacity: 0.99; }
-  50% { opacity: 1; }
-  100% { opacity: 0.985; }
-}
-
-// Stack Tag Monokrom
-.stack-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 8px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--os-light);
-  background: var(--os-panel);
-  border: 1px solid var(--os-border);
-  letter-spacing: 0.05em;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-  
-  &:hover {
-    border-color: var(--os-white);
-    color: var(--os-white);
-  }
-}
-
-// Retro Button
-.retro-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid var(--os-border-bright);
-  background: var(--os-surface);
-  color: var(--os-white);
-  cursor: pointer;
-  transition: all 0.15s ease;
-  user-select: none;
-
-  &:hover {
-    background: var(--os-white);
-    color: var(--os-black);
-    border-color: var(--os-white);
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
-
-  &.active {
-    background: var(--os-white);
-    color: var(--os-black);
-    border-color: var(--os-white);
-  }
+  background: var(--gh-border);
+  border-radius: 4px;
 }

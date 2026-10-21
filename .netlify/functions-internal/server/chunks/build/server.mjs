@@ -407,7 +407,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-ph9r9EKy.mjs')
+    component: () => import('./index-CiLbJ3MB.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -783,7 +783,7 @@ const plugins = [
   components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BmJ8AUtL.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-BIMJ4sy2.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({

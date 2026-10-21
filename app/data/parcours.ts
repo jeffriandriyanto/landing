@@ -1,6 +1,6 @@
 export interface ParcoursNode {
   hash: string
-  branch: 'main' | 'fe-core' | 'fullstack-vibe'
+  branch: 'main' | 'fe-core' | 'fullstack'
   date: string
   role: string
   company: string
@@ -77,27 +77,27 @@ export const parcoursData: ParcoursNode[] = [
   },
   {
     hash: '04d120',
-    branch: 'fullstack-vibe',
+    branch: 'fullstack',
     date: 'Jan 2020 — Present',
     role: 'Software Engineer & Founder',
     company: 'creetech.id',
     location: 'Salatiga, Central Java · Hybrid',
     employmentType: 'Self-employed · 6 yrs 10 mos',
-    commitMsg: 'fork: feat(fullstack) end-to-end applications, Laravel 12, Nuxt & vibe coding',
-    desc: 'Developing end-to-end full-stack web applications for clients across various industries, independently and collaboratively. Embracing modern AI vibe coding workflows to ship robust production software rapidly.',
+    commitMsg: 'fork: feat(fullstack) end-to-end applications, Laravel 12, Nuxt & fullstack architecture',
+    desc: 'Developing end-to-end full-stack web applications for clients across various industries, independently and collaboratively. Specializing in frontend architecture, API integrations, and robust database design.',
     facts: [
       'Engineered EPP Plant: export botanical OMS & e-commerce with concurrency-safe atomic inventory locking (Nuxt 4 SSR + Laravel 12 API)',
       'Built Bukit Wahid Regency: smart residential ecosystem with automated IPL/PAM billing, emergency panic dispatch, and e-voting',
       'Created KIRKA: electoral canvassing and real-time vote projection platform with hierarchical TPS tracking',
       'Configured full DevOps pipelines: Ubuntu VPS, Nginx reverse proxy, PM2, Cloudflare, MySQL 8',
     ],
-    tags: ['fullstack', 'nuxt-4', 'laravel-12', 'vue-3', 'vibe-coding', 'devops', 'mysql', 'echarts'],
-    stat: 'Fullstack & Vibe Coding studio',
+    tags: ['fullstack', 'nuxt-4', 'laravel-12', 'vue-3', 'devops', 'mysql', 'echarts'],
+    stat: 'Fullstack web applications',
     isFork: true,
   },
   {
     hash: '05e921',
-    branch: 'fullstack-vibe',
+    branch: 'fullstack',
     date: 'Sep 2021 — Feb 2023',
     role: 'Software Engineer',
     company: 'poteq',
@@ -121,14 +121,14 @@ export const parcoursData: ParcoursNode[] = [
     company: 'Salatiga, Central Java, ID',
     location: 'Remote Worldwide',
     employmentType: 'Open for Opportunities & High-Impact Ventures',
-    commitMsg: 'merge: branch fullstack-vibe into main → dual-core frontend & vibe builder',
-    desc: 'Operating from Salatiga with 8+ years of seasoned frontend expertise, amplified by rapid fullstack AI/vibe coding execution. Turning complex ideas into user-friendly, production-ready software.',
+    commitMsg: 'merge: branch fullstack into main → senior frontend & fullstack engineering',
+    desc: 'Operating from Salatiga with 8+ years of seasoned frontend expertise, combined with end-to-end fullstack execution. Turning complex product requirements into resilient, user-friendly, production-ready software.',
     facts: [
       'Uncompromising UI/UX craftsmanship: deep understanding of the DOM, reactive state, and user empathy',
-      'Fullstack velocity: shipping end-to-end backends, databases, and micro-frontends with AI-augmented speed',
-      'Available for fullstack contract projects, frontend architecture leadership, and ambitious builds',
+      'Fullstack delivery: engineering scalable backends, database schemas, and micro-frontends with high reliability',
+      'Available for frontend architecture leadership, fullstack contract projects, and complex web applications',
     ],
-    tags: ['software-engineer', 'product-builder', 'salatiga', 'micro-frontends', 'fullstack', 'vibe-coding'],
+    tags: ['senior-frontend', 'frontend-architecture', 'salatiga', 'micro-frontends', 'fullstack', 'typescript'],
     stat: 'Ready for new ventures',
     isMerge: true,
     isHead: true,

@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default <Config>{
+  darkMode: 'class',
   content: [
     './app/components/**/*.{vue,ts}',
     './app/layouts/**/*.vue',
@@ -10,57 +11,36 @@ export default <Config>{
   theme: {
     extend: {
       colors: {
-        void: {
-          DEFAULT: '#050505',
-          50: '#0d0d0d',
-          100: '#141414',
-          200: '#1c1c1c',
-          300: '#262626',
-          400: '#383838',
-        },
-        retro: {
-          black: '#000000',
-          void: '#050505',
-          dark: '#0e0e0e',
-          surface: '#171717',
-          panel: '#1f1f1f',
-          border: '#333333',
-          'border-light': '#555555',
-          dim: '#777777',
-          muted: '#999999',
-          light: '#dcdcdc',
-          white: '#ffffff',
-        },
-        silver: {
-          DEFAULT: '#dcdcdc',
-          dim: '#777777',
-          muted: '#999999',
-          bright: '#ffffff',
-        },
-        accent: {
-          DEFAULT: '#ffffff',
-          glow: '#ffffff',
-          dim: '#aaaaaa',
+        gh: {
+          canvas: 'var(--gh-canvas)',
+          subtle: 'var(--gh-subtle)',
+          panel: 'var(--gh-panel)',
+          border: 'var(--gh-border)',
+          'border-muted': 'var(--gh-border-muted)',
+          fg: 'var(--gh-fg)',
+          muted: 'var(--gh-muted)',
+          blue: 'var(--gh-blue)',
+          'blue-subtle': 'var(--gh-blue-subtle)',
+          green: 'var(--gh-green)',
+          'green-subtle': 'var(--gh-green-subtle)',
+          purple: 'var(--gh-purple)',
+          orange: 'var(--gh-orange)',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', '"Space Mono"', 'Courier New', 'monospace'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
-      animation: {
-        'flicker': 'flicker 0.15s infinite',
-        'blink': 'blink 1s step-start infinite',
-        'scanline': 'scanline 8s linear infinite',
+      borderRadius: {
+        md: '6px',
+        lg: '8px',
       },
-      keyframes: {
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
-        },
-        flicker: {
-          '0%, 100%': { opacity: '0.98' },
-          '50%': { opacity: '1' },
-        },
+      boxShadow: {
+        xs: '0 1px 0 rgba(27, 31, 36, 0.04)',
+        sm: '0 1px 2px rgba(27, 31, 36, 0.08)',
+        md: '0 3px 6px rgba(140, 149, 159, 0.15)',
+        modal: '0 8px 24px rgba(140, 149, 159, 0.2)',
+        'modal-dark': '0 8px 24px rgba(1, 4, 9, 0.8)',
       },
     },
   },

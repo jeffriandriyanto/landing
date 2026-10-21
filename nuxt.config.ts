@@ -20,28 +20,33 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: "Jeffri Andriyanto — Software Engineer & Product Builder",
+      title: "Jeffri Andriyanto — Senior Frontend Engineer",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
           content:
-            "JEFFRI-OS. Software engineer with deep frontend roots, building fullstack apps and products with modern AI and vibe coding workflows. Interactive retro OS portfolio.",
+            "Portfolio of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Micro-Frontends. Based in Salatiga, Indonesia.",
         },
-        { name: "theme-color", content: "#000000" },
+        { name: "theme-color", content: "#ffffff" },
         {
           property: "og:title",
-          content: "Jeffri Andriyanto — Software Engineer & Product Builder",
+          content: "Jeffri Andriyanto — Senior Frontend Engineer",
         },
         {
           property: "og:description",
           content:
-            "JEFFRI-OS: Interactive retro desktop portfolio of Jeffri Andriyanto.",
+            "GitHub-inspired developer profile of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience.",
         },
         { property: "og:type", content: "website" },
       ],
       link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/logo.png",
+        },
         {
           rel: "preconnect",
           href: "https://fonts.googleapis.com",
