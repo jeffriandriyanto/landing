@@ -231,15 +231,15 @@ onUnmounted(() => {
 })
 
 useHead({
-  title: 'Jeffri Andriyanto — Senior Frontend Engineer',
+  title: 'Jeffri Andriyanto — Software Engineer',
   meta: [
     {
       name: 'description',
       content:
-        'GitHub-inspired developer profile of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of experience in Vue, Nuxt, React, Next.js, TypeScript, and Micro-Frontends. Based in Salatiga, Indonesia.',
+        'GitHub-inspired developer profile of Jeffri Andriyanto. Software Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Fullstack Web Systems. Based in Salatiga, Indonesia.',
     },
-    { property: 'og:title', content: 'Jeffri Andriyanto — Senior Frontend Engineer' },
-    { property: 'og:description', content: 'GitHub-inspired developer profile of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience.' },
+    { property: 'og:title', content: 'Jeffri Andriyanto — Software Engineer' },
+    { property: 'og:description', content: 'GitHub-inspired developer profile of Jeffri Andriyanto. Software Engineer with 8+ years of production experience.' },
   ],
 })
 </script>

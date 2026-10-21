@@ -30,7 +30,7 @@
           <span class="text-xs">he/him</span>
         </div>
         <div class="text-xs font-medium text-gh-blue mt-1 flex items-center gap-1">
-          <span>Senior Frontend Engineer</span>
+          <span>Software Engineer</span>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
     <!-- Authentic Bio -->
     <div class="text-xs sm:text-sm text-gh-fg leading-relaxed mb-4">
       <p>
-        Seasoned Web Developer with <strong>8+ years of experience</strong> based in Salatiga, mainly focused on frontend architecture and UI/UX with full-stack capabilities.
+        <strong>Software Engineer</strong> with 8+ years of experience based in Salatiga, specializing in frontend architecture, UI/UX systems, and full-stack web applications.
       </p>
     </div>
 

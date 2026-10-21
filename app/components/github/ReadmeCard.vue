@@ -17,11 +17,11 @@
     <!-- Card Body -->
     <div class="p-5 sm:p-6 markdown-body text-gh-fg">
       <h2 class="text-lg sm:text-xl font-semibold border-b border-gh-border pb-2 mb-4 text-gh-fg">
-        Senior Frontend Engineer & Engineering Leader
+        Software Engineer & Engineering Lead
       </h2>
 
       <p class="text-sm leading-relaxed text-gh-fg">
-        👋 Hi there! I'm a Web Developer with <strong>8+ years of production experience</strong> based in Salatiga, Central Java, Indonesia. My core specialization centers on frontend architecture, responsive dashboard interfaces, and maintainable web applications with full-stack delivery capability.
+        👋 Hi there! I'm a <strong>Software Engineer</strong> with 8+ years of production experience based in Salatiga, Central Java, Indonesia. With deep foundations in frontend architecture, I specialize in building scalable web applications, responsive user interfaces, and full-stack product systems.
       </p>
 
       <p class="text-sm leading-relaxed text-gh-fg">

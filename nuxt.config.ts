@@ -20,24 +20,24 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: "Jeffri Andriyanto — Senior Frontend Engineer",
+      title: "Jeffri Andriyanto — Software Engineer",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
           content:
-            "Portfolio of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Micro-Frontends. Based in Salatiga, Indonesia.",
+            "Portfolio of Jeffri Andriyanto. Software Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Fullstack Web Systems. Based in Salatiga, Indonesia.",
         },
         { name: "theme-color", content: "#ffffff" },
         {
           property: "og:title",
-          content: "Jeffri Andriyanto — Senior Frontend Engineer",
+          content: "Jeffri Andriyanto — Software Engineer",
         },
         {
           property: "og:description",
           content:
-            "GitHub-inspired developer profile of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience.",
+            "GitHub-inspired developer profile of Jeffri Andriyanto. Software Engineer with 8+ years of production experience.",
         },
         { property: "og:type", content: "website" },
       ],

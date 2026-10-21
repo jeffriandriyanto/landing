@@ -75,7 +75,7 @@ function createHead(options = {}) {
 
 const NUXT_RUNTIME_PAYLOAD_EXTRACTION = false;
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"description","content":"Portfolio of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Micro-Frontends. Based in Salatiga, Indonesia."},{"name":"theme-color","content":"#ffffff"},{"property":"og:title","content":"Jeffri Andriyanto — Senior Frontend Engineer"},{"property":"og:description","content":"GitHub-inspired developer profile of Jeffri Andriyanto. Senior Frontend Engineer with 8+ years of production experience."},{"property":"og:type","content":"website"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"title":"Jeffri Andriyanto — Senior Frontend Engineer","charset":"utf-8","viewport":"width=device-width, initial-scale=1"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"description","content":"Portfolio of Jeffri Andriyanto. Software Engineer with 8+ years of production experience in Vue, Nuxt, React, Next.js, TypeScript, and Fullstack Web Systems. Based in Salatiga, Indonesia."},{"name":"theme-color","content":"#ffffff"},{"property":"og:title","content":"Jeffri Andriyanto — Software Engineer"},{"property":"og:description","content":"GitHub-inspired developer profile of Jeffri Andriyanto. Software Engineer with 8+ years of production experience."},{"property":"og:type","content":"website"}],"link":[{"rel":"icon","type":"image/png","href":"/logo.png"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"title":"Jeffri Andriyanto — Software Engineer","charset":"utf-8","viewport":"width=device-width, initial-scale=1"};
 
 const appRootTag = "div";
 
@@ -504,5 +504,5 @@ const renderer = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   default: handler
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { baseURL as b, headSymbol as h, renderer as r, useHead as u };
+export { baseURL as b, headSymbol as h, publicAssetsURL as p, renderer as r, useHead as u };
 //# sourceMappingURL=renderer.mjs.map
