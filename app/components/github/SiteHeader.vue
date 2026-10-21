@@ -54,6 +54,20 @@
           <span class="hidden sm:inline font-mono text-[11px]">{{ soundEnabled ? 'SFX' : 'Muted' }}</span>
         </button>
 
+        <!-- ATS Resume / CV Link -->
+        <NuxtLink
+          to="/cv"
+          class="gh-btn text-xs font-medium flex items-center gap-1"
+          title="Download ATS CV / Resume"
+          @click="playClick"
+        >
+          <svg class="w-3.5 h-3.5 text-gh-muted" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4.75 0a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.784 1.75 1.75 1.75h6.5A1.75 1.75 0 0 0 13 14.25V4.828a1.75 1.75 0 0 0-.513-1.237L9.914.513A1.75 1.75 0 0 0 8.677 0H4.75ZM4.5 1.75a.25.25 0 0 1 .25-.25h3.75v3.25c0 .414.336.75.75.75h3.25v8.75a.25.25 0 0 1-.25.25H4.75a.25.25 0 0 1-.25-.25V1.75Z" />
+          </svg>
+          <span class="hidden sm:inline">CV / Resume</span>
+          <span class="sm:hidden">CV</span>
+        </NuxtLink>
+
         <!-- External Profile Links -->
         <a
           href="https://github.com/jeffriandriyanto"

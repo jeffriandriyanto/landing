@@ -405,9 +405,14 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
+    name: "cv",
+    path: "/cv",
+    component: () => import('./cv-DI7ReTuP.mjs')
+  },
+  {
     name: "index",
     path: "/",
-    component: () => import('./index-D0WlOSOe.mjs')
+    component: () => import('./index-C51Q0r6y.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -783,7 +788,7 @@ const plugins = [
   components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BIMJ4sy2.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-BOvloj9z.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -1065,7 +1070,7 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-Bgo-gIZJ.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-DQFBiSWq.mjs'));
     const _Error = defineAsyncComponent(() => import('./error-500-lIscXLUC.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {

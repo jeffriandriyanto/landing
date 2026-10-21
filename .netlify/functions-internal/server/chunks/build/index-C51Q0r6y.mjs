@@ -1,10 +1,12 @@
-import { defineComponent, computed, ref, mergeProps, unref, useSSRContext } from 'vue';
+import { defineComponent, computed, ref, mergeProps, unref, withCtx, openBlock, createBlock, createVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrRenderAttr, ssrRenderClass, ssrInterpolate, ssrRenderStyle } from 'vue/server-renderer';
+import { _ as __nuxt_component_0 } from './nuxt-link-BvdgJth_.mjs';
 import { p as publicAssetsURL } from '../routes/renderer.mjs';
-import { u as useState, a as useGitHubTheme } from './useGitHubTheme-C490PMid.mjs';
+import { u as useGitHubTheme } from './useGitHubTheme-B2YxDf5c.mjs';
+import { u as useRetroAudio } from './useRetroAudio-BBIGfzr4.mjs';
 import { _ as _export_sfc } from './server.mjs';
+import { u as useState } from './state-CuouCpJu.mjs';
 import { u as useHead } from './v4-Dc1twzv4.mjs';
-import 'vue-bundle-renderer/runtime';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -13,59 +15,54 @@ import 'node:buffer';
 import 'node:fs';
 import 'node:path';
 import 'node:crypto';
+import 'vue-bundle-renderer/runtime';
 import 'unhead/server';
 import 'devalue';
 import 'unhead/utils';
 import 'vue-router';
 
 const _imports_0$1 = publicAssetsURL("/logo.png");
-const useRetroAudio = () => {
-  const soundEnabled = useState("retro-sound-enabled", () => true);
-  const toggleSound = () => {
-    soundEnabled.value = !soundEnabled.value;
-    if (soundEnabled.value) {
-      playBeep(980, 0.06);
-    }
-  };
-  const playClick = () => {
-    if (!soundEnabled.value) return;
-    return;
-  };
-  const playBeep = (freq = 880, duration = 0.05) => {
-    if (!soundEnabled.value) return;
-    return;
-  };
-  const playBoot = () => {
-    if (!soundEnabled.value) return;
-    return;
-  };
-  const playSwitch = () => {
-    if (!soundEnabled.value) return;
-    return;
-  };
-  return {
-    soundEnabled,
-    toggleSound,
-    playClick,
-    playBeep,
-    playBoot,
-    playSwitch
-  };
-};
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "SiteHeader",
   __ssrInlineRender: true,
   setup(__props) {
     const { isDark } = useGitHubTheme();
-    const { soundEnabled } = useRetroAudio();
+    const { soundEnabled, playClick } = useRetroAudio();
     return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
       _push(`<header${ssrRenderAttrs(mergeProps({ class: "bg-gh-subtle border-b border-gh-border text-gh-fg text-sm select-none sticky top-0 z-30 transition-colors duration-150" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4"><div class="flex items-center gap-3"><a href="/" class="flex items-center gap-2 font-semibold text-gh-fg hover:text-gh-blue transition-colors" aria-label="Home"><img${ssrRenderAttr("src", _imports_0$1)} alt="Jeffri Andriyanto" class="w-6 h-6 object-contain rounded"></a><div class="hidden sm:flex items-center text-gh-muted text-xs font-mono"><span>/</span><a href="#overview" class="ml-1 text-gh-fg font-semibold hover:text-gh-blue hover:underline"> jeffriandriyanto </a></div></div><div class="flex items-center gap-2 sm:gap-3"><div class="hidden md:flex items-center gap-2 px-2.5 py-1 text-xs border border-gh-border rounded-md bg-gh-canvas text-gh-muted"><svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path></svg><span>Type <kbd class="px-1 border border-gh-border rounded bg-gh-subtle text-[10px] font-mono">/</kbd> to search</span></div><button type="button" class="gh-btn text-xs px-2"${ssrRenderAttr("title", unref(soundEnabled) ? "Mute sound effects" : "Enable sound effects")}>`);
       if (unref(soundEnabled)) {
         _push(`<svg class="w-3.5 h-3.5 text-gh-green" viewBox="0 0 16 16" fill="currentColor"><path d="M7.559 1.978a.75.75 0 0 1 .791.17l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.29-.53V2.5a.75.75 0 0 1 .5-.522ZM1.75 5.5h2.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 1 .75-.75Z"></path><path d="M13.53 4.47a.75.75 0 0 1 1.06 0 5 5 0 0 1 0 7.06.75.75 0 0 1-1.06-1.06 3.5 3.5 0 0 0 0-4.94.75.75 0 0 1 0-1.06Z"></path></svg>`);
       } else {
         _push(`<svg class="w-3.5 h-3.5 text-gh-muted" viewBox="0 0 16 16" fill="currentColor"><path d="M7.559 1.978a.75.75 0 0 1 .791.17l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.29-.53V2.5a.75.75 0 0 1 .5-.522ZM1.75 5.5h2.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 1 .75-.75Z"></path><path d="m12.28 6.22 2.5 2.5a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 1 1 1.06-1.06Zm1.44 0-2.5 2.5a.75.75 0 1 1-1.06-1.06l2.5-2.5a.75.75 0 1 1 1.06 1.06Z"></path></svg>`);
       }
-      _push(`<span class="hidden sm:inline font-mono text-[11px]">${ssrInterpolate(unref(soundEnabled) ? "SFX" : "Muted")}</span></button><a href="https://github.com/jeffriandriyanto" target="_blank" rel="noopener" class="gh-btn text-xs" title="GitHub Profile"><span>GitHub</span><span class="text-[10px] text-gh-muted">↗</span></a><a href="https://www.linkedin.com/in/jeffriandriyanto/" target="_blank" rel="noopener" class="gh-btn text-xs" title="LinkedIn Profile"><span>LinkedIn</span><span class="text-[10px] text-gh-muted">↗</span></a><button type="button" class="gh-btn p-1.5"${ssrRenderAttr("title", unref(isDark) ? "Switch to Light theme" : "Switch to Dark theme")}>`);
+      _push(`<span class="hidden sm:inline font-mono text-[11px]">${ssrInterpolate(unref(soundEnabled) ? "SFX" : "Muted")}</span></button>`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/cv",
+        class: "gh-btn text-xs font-medium flex items-center gap-1",
+        title: "Download ATS CV / Resume",
+        onClick: unref(playClick)
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<svg class="w-3.5 h-3.5 text-gh-muted" viewBox="0 0 16 16" fill="currentColor"${_scopeId}><path d="M4.75 0a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.784 1.75 1.75 1.75h6.5A1.75 1.75 0 0 0 13 14.25V4.828a1.75 1.75 0 0 0-.513-1.237L9.914.513A1.75 1.75 0 0 0 8.677 0H4.75ZM4.5 1.75a.25.25 0 0 1 .25-.25h3.75v3.25c0 .414.336.75.75.75h3.25v8.75a.25.25 0 0 1-.25.25H4.75a.25.25 0 0 1-.25-.25V1.75Z"${_scopeId}></path></svg><span class="hidden sm:inline"${_scopeId}>CV / Resume</span><span class="sm:hidden"${_scopeId}>CV</span>`);
+          } else {
+            return [
+              (openBlock(), createBlock("svg", {
+                class: "w-3.5 h-3.5 text-gh-muted",
+                viewBox: "0 0 16 16",
+                fill: "currentColor"
+              }, [
+                createVNode("path", { d: "M4.75 0a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.784 1.75 1.75 1.75h6.5A1.75 1.75 0 0 0 13 14.25V4.828a1.75 1.75 0 0 0-.513-1.237L9.914.513A1.75 1.75 0 0 0 8.677 0H4.75ZM4.5 1.75a.25.25 0 0 1 .25-.25h3.75v3.25c0 .414.336.75.75.75h3.25v8.75a.25.25 0 0 1-.25.25H4.75a.25.25 0 0 1-.25-.25V1.75Z" })
+              ])),
+              createVNode("span", { class: "hidden sm:inline" }, "CV / Resume"),
+              createVNode("span", { class: "sm:hidden" }, "CV")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<a href="https://github.com/jeffriandriyanto" target="_blank" rel="noopener" class="gh-btn text-xs" title="GitHub Profile"><span>GitHub</span><span class="text-[10px] text-gh-muted">↗</span></a><a href="https://www.linkedin.com/in/jeffriandriyanto/" target="_blank" rel="noopener" class="gh-btn text-xs" title="LinkedIn Profile"><span>LinkedIn</span><span class="text-[10px] text-gh-muted">↗</span></a><button type="button" class="gh-btn p-1.5"${ssrRenderAttr("title", unref(isDark) ? "Switch to Light theme" : "Switch to Dark theme")}>`);
       if (unref(isDark)) {
         _push(`<svg class="w-4 h-4 text-amber-400" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.061a.75.75 0 0 1 1.061 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-12.596 4.404a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061Zm9.192-9.192a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM8 13a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Z"></path></svg>`);
       } else {
@@ -87,10 +84,36 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
   __name: "ProfileSidebar",
   __ssrInlineRender: true,
   setup(__props) {
-    useRetroAudio();
+    const { playClick } = useRetroAudio();
     const emailCopied = ref(false);
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<aside${ssrRenderAttrs(mergeProps({ class: "w-full font-sans text-gh-fg" }, _attrs))}><div class="flex flex-row lg:flex-col items-center lg:items-start gap-4 mb-4"><div class="relative flex-shrink-0"><div class="w-20 h-20 sm:w-28 sm:h-28 lg:w-64 lg:h-64 rounded-full lg:rounded-md border border-gh-border bg-gh-subtle overflow-hidden flex items-center justify-center shadow-xs"><img${ssrRenderAttr("src", _imports_0)} alt="Jeffri Andriyanto" class="w-full h-full object-cover"></div><div class="hidden lg:flex items-center gap-1.5 absolute -bottom-2 left-3 px-2 py-0.5 rounded-full border border-gh-border bg-gh-canvas text-[11px] shadow-xs text-gh-fg"><span class="w-2 h-2 rounded-full bg-gh-green animate-pulse"></span><span class="text-gh-muted">Available for work</span></div></div><div class="flex-1 min-w-0"><h1 class="text-xl sm:text-2xl font-bold leading-tight text-gh-fg tracking-tight"> Jeffri Andriyanto </h1><div class="text-sm font-normal text-gh-muted font-mono flex items-center gap-1.5 mt-0.5"><span>jeffriandriyanto</span><span>·</span><span class="text-xs">he/him</span></div><div class="text-xs font-medium text-gh-blue mt-1 flex items-center gap-1"><span>Software Engineer</span></div></div></div><div class="flex lg:hidden items-center gap-1.5 mb-4 px-2.5 py-1 rounded-md border border-gh-border bg-gh-subtle text-xs w-fit"><span class="w-2 h-2 rounded-full bg-gh-green animate-pulse"></span><span class="text-gh-muted">Available for projects &amp; roles</span></div><div class="text-xs sm:text-sm text-gh-fg leading-relaxed mb-4"><p><strong>Software Engineer</strong> with 8+ years of experience based in Salatiga, specializing in frontend architecture, UI/UX systems, and full-stack web applications. </p></div><div class="flex flex-col gap-2 mb-6"><a href="mailto:jeffriandriyanto.fe@gmail.com" class="gh-btn primary w-full py-1.5 text-xs font-semibold"><svg class="w-4 h-4 mr-1" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-7.681L8 8.358 1.5 4.57V3.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v.82Z"></path></svg><span>Get in Touch</span></a><button type="button" class="gh-btn w-full py-1.5 text-xs"><svg class="w-3.5 h-3.5 text-gh-muted mr-1" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span>${ssrInterpolate(unref(emailCopied) ? "✓ Copied to clipboard!" : "Copy Email Address")}</span></button></div><div class="space-y-2.5 text-xs text-gh-fg border-t border-gh-border pt-4 pb-6"><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v9.5C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0 0 16 12.25v-9.5A1.75 1.75 0 0 0 14.25 1H1.75ZM1.5 2.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v9.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25v-9.5ZM3 4.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 3 7.75Zm0 3a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm4-6a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 4.75Zm0 3a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 7.75Zm0 3a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 10.75Z"></path></svg><span class="truncate">Duit Investech · creetech.id</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132A5 5 0 1 0 4.464 10.535L8 14.07l3.536-3.535a5 5 0 0 0 0-7.071ZM8 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"></path></svg><span>Salatiga, Central Java, ID</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v3.69l2.72 1.63a.75.75 0 1 1-.77 1.28L7.25 9.47A.75.75 0 0 1 7 8.82V4.75a.75.75 0 0 1 1.5 0Z"></path></svg><span>WIB (UTC+7) · Remote worldwide</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-.05 9.45a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25z"></path></svg><a href="https://www.linkedin.com/in/jeffriandriyanto/" target="_blank" rel="noopener" class="text-gh-fg hover:text-gh-blue hover:underline truncate"> in/jeffriandriyanto </a></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg><a href="https://github.com/jeffriandriyanto" target="_blank" rel="noopener" class="text-gh-fg hover:text-gh-blue hover:underline truncate"> @jeffriandriyanto </a></div></div><div class="border-t border-gh-border pt-4"><h2 class="text-xs font-semibold text-gh-muted uppercase tracking-wider mb-2.5"> Core Capabilities </h2><div class="flex flex-wrap gap-1.5"><span class="gh-badge font-mono text-[11px]">Vue 3 / Nuxt 3</span><span class="gh-badge font-mono text-[11px]">TypeScript</span><span class="gh-badge font-mono text-[11px]">Micro-Frontends</span><span class="gh-badge font-mono text-[11px]">Module Federation</span><span class="gh-badge font-mono text-[11px]">React / Next.js</span><span class="gh-badge font-mono text-[11px]">Tailwind CSS</span><span class="gh-badge font-mono text-[11px]">Fullstack (Laravel/Node)</span><span class="gh-badge font-mono text-[11px]">Hardware &amp; IoT</span></div></div></aside>`);
+      const _component_NuxtLink = __nuxt_component_0;
+      _push(`<aside${ssrRenderAttrs(mergeProps({ class: "w-full font-sans text-gh-fg" }, _attrs))}><div class="flex flex-row lg:flex-col items-center lg:items-start gap-4 mb-4"><div class="relative flex-shrink-0"><div class="w-20 h-20 sm:w-28 sm:h-28 lg:w-64 lg:h-64 rounded-full lg:rounded-md border border-gh-border bg-gh-subtle overflow-hidden flex items-center justify-center shadow-xs"><img${ssrRenderAttr("src", _imports_0)} alt="Jeffri Andriyanto" class="w-full h-full object-cover"></div><div class="hidden lg:flex items-center gap-1.5 absolute -bottom-2 left-3 px-2 py-0.5 rounded-full border border-gh-border bg-gh-canvas text-[11px] shadow-xs text-gh-fg"><span class="w-2 h-2 rounded-full bg-gh-green animate-pulse"></span><span class="text-gh-muted">Available for work</span></div></div><div class="flex-1 min-w-0"><h1 class="text-xl sm:text-2xl font-bold leading-tight text-gh-fg tracking-tight"> Jeffri Andriyanto </h1><div class="text-sm font-normal text-gh-muted font-mono flex items-center gap-1.5 mt-0.5"><span>jeffriandriyanto</span><span>·</span><span class="text-xs">he/him</span></div><div class="text-xs font-medium text-gh-blue mt-1 flex items-center gap-1"><span>Software Engineer</span></div></div></div><div class="flex lg:hidden items-center gap-1.5 mb-4 px-2.5 py-1 rounded-md border border-gh-border bg-gh-subtle text-xs w-fit"><span class="w-2 h-2 rounded-full bg-gh-green animate-pulse"></span><span class="text-gh-muted">Available for projects &amp; roles</span></div><div class="text-xs sm:text-sm text-gh-fg leading-relaxed mb-4"><p><strong>Software Engineer</strong> with 8+ years of experience based in Salatiga, specializing in frontend architecture, UI/UX systems, and full-stack web applications. </p></div><div class="flex flex-col gap-2 mb-6"><a href="mailto:jeffriandriyanto.fe@gmail.com" class="gh-btn primary w-full py-1.5 text-xs font-semibold"><svg class="w-4 h-4 mr-1" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-7.681L8 8.358 1.5 4.57V3.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v.82Z"></path></svg><span>Get in Touch</span></a>`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/cv",
+        class: "gh-btn w-full py-1.5 text-xs font-medium text-gh-fg flex items-center justify-center gap-1.5",
+        onClick: unref(playClick)
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<svg class="w-3.5 h-3.5 text-gh-muted" viewBox="0 0 16 16" fill="currentColor"${_scopeId}><path d="M4.75 0a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.784 1.75 1.75 1.75h6.5A1.75 1.75 0 0 0 13 14.25V4.828a1.75 1.75 0 0 0-.513-1.237L9.914.513A1.75 1.75 0 0 0 8.677 0H4.75ZM4.5 1.75a.25.25 0 0 1 .25-.25h3.75v3.25c0 .414.336.75.75.75h3.25v8.75a.25.25 0 0 1-.25.25H4.75a.25.25 0 0 1-.25-.25V1.75Z"${_scopeId}></path></svg><span${_scopeId}>View ATS CV / Resume</span><span class="text-[10px] text-gh-blue font-mono bg-blue-500/10 px-1 py-0.5 rounded border border-blue-500/20"${_scopeId}>ATS</span>`);
+          } else {
+            return [
+              (openBlock(), createBlock("svg", {
+                class: "w-3.5 h-3.5 text-gh-muted",
+                viewBox: "0 0 16 16",
+                fill: "currentColor"
+              }, [
+                createVNode("path", { d: "M4.75 0a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.784 1.75 1.75 1.75h6.5A1.75 1.75 0 0 0 13 14.25V4.828a1.75 1.75 0 0 0-.513-1.237L9.914.513A1.75 1.75 0 0 0 8.677 0H4.75ZM4.5 1.75a.25.25 0 0 1 .25-.25h3.75v3.25c0 .414.336.75.75.75h3.25v8.75a.25.25 0 0 1-.25.25H4.75a.25.25 0 0 1-.25-.25V1.75Z" })
+              ])),
+              createVNode("span", null, "View ATS CV / Resume"),
+              createVNode("span", { class: "text-[10px] text-gh-blue font-mono bg-blue-500/10 px-1 py-0.5 rounded border border-blue-500/20" }, "ATS")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<button type="button" class="gh-btn w-full py-1.5 text-xs"><svg class="w-3.5 h-3.5 text-gh-muted mr-1" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span>${ssrInterpolate(unref(emailCopied) ? "✓ Copied to clipboard!" : "Copy Email Address")}</span></button></div><div class="space-y-2.5 text-xs text-gh-fg border-t border-gh-border pt-4 pb-6"><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v9.5C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0 0 16 12.25v-9.5A1.75 1.75 0 0 0 14.25 1H1.75ZM1.5 2.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v9.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25v-9.5ZM3 4.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 3 7.75Zm0 3a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm4-6a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 4.75Zm0 3a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 7.75Zm0 3a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 10.75Z"></path></svg><span class="truncate">Duit Investech · creetech.id</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132A5 5 0 1 0 4.464 10.535L8 14.07l3.536-3.535a5 5 0 0 0 0-7.071ZM8 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"></path></svg><span>Salatiga, Central Java, ID</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v3.69l2.72 1.63a.75.75 0 1 1-.77 1.28L7.25 9.47A.75.75 0 0 1 7 8.82V4.75a.75.75 0 0 1 1.5 0Z"></path></svg><span>WIB (UTC+7) · Remote worldwide</span></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-.05 9.45a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25z"></path></svg><a href="https://www.linkedin.com/in/jeffriandriyanto/" target="_blank" rel="noopener" class="text-gh-fg hover:text-gh-blue hover:underline truncate"> in/jeffriandriyanto </a></div><div class="flex items-center gap-2"><svg class="w-4 h-4 text-gh-muted flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg><a href="https://github.com/jeffriandriyanto" target="_blank" rel="noopener" class="text-gh-fg hover:text-gh-blue hover:underline truncate"> @jeffriandriyanto </a></div></div><div class="border-t border-gh-border pt-4"><h2 class="text-xs font-semibold text-gh-muted uppercase tracking-wider mb-2.5"> Core Capabilities </h2><div class="flex flex-wrap gap-1.5"><span class="gh-badge font-mono text-[11px]">Vue 3 / Nuxt 3</span><span class="gh-badge font-mono text-[11px]">TypeScript</span><span class="gh-badge font-mono text-[11px]">Micro-Frontends</span><span class="gh-badge font-mono text-[11px]">Module Federation</span><span class="gh-badge font-mono text-[11px]">React / Next.js</span><span class="gh-badge font-mono text-[11px]">Tailwind CSS</span><span class="gh-badge font-mono text-[11px]">Fullstack (Laravel/Node)</span><span class="gh-badge font-mono text-[11px]">Hardware &amp; IoT</span></div></div></aside>`);
     };
   }
 });
@@ -825,4 +848,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-D0WlOSOe.mjs.map
+//# sourceMappingURL=index-C51Q0r6y.mjs.map

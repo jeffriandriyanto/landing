@@ -27,23 +27,6 @@ function useState(...args) {
   }
   return state;
 }
-const useGitHubTheme = () => {
-  const isDark = useState("github-is-dark", () => false);
-  const applyTheme = (dark) => {
-    isDark.value = dark;
-  };
-  const toggleTheme = () => {
-    applyTheme(!isDark.value);
-  };
-  const initTheme = () => {
-    return;
-  };
-  return {
-    isDark,
-    toggleTheme,
-    initTheme
-  };
-};
 
-export { useGitHubTheme as a, useState as u };
-//# sourceMappingURL=useGitHubTheme-C490PMid.mjs.map
+export { useState as u };
+//# sourceMappingURL=state-CuouCpJu.mjs.map
